@@ -10,7 +10,7 @@ This application uses AWS serverless microservice implementation.
 REST API Routes
 
 User
-
+```
 get /users
 
 get /user/:id
@@ -20,9 +20,10 @@ post /users
 put /user/:id
 
 delete /user/:id
+```
 
 Product
-
+```
 get /products
 
 get /products/:query
@@ -34,13 +35,17 @@ post /products
 put /product/:id
 
 delete /product/:id
+```
 
 Carts
+```
 post /cart
+```
 
 Reports
+```
 get /reports/top
-
+```
 
 ## Installation
 
