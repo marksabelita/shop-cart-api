@@ -1,0 +1,113 @@
+plugins: # List of plugins of use on application
+    - serverless-offline # Get your serverless configuration and run the server local
+    - serverless-plugin-typescript-express
+
+# Project name on the infrastructure created
+service: xend-git-exam
+
+provider:
+  name: aws
+  runtime: nodejs8.10 
+  stage: dev 
+  region: us-east-1 
+  deploymentBucket: yourdeploymentbucket
+
+custom:
+  serverless-offline:
+    port: 3000
+  domains:
+    live: live.domain
+    release: release.domain
+    development: dev.domain
+
+functions:  
+  # User
+  getUser:
+    handler: src/server.handler
+    events:
+      - http: 
+          path: user/{id}
+          method: get
+  getUsers: 
+    handler: src/server.handler 
+    events: 
+      - http: 
+          path: users
+          method: get
+  createUser:
+    handler: src/server.handler
+    events:
+      - http:
+          path: users
+          method: post
+  updateUser:
+    handler: src/server.handler
+    events:
+      - http: 
+          path: user/{id}
+          method: put
+  deleteUser:
+    handler: src/server.handler
+    events:
+      - http: 
+          path: user/{id}
+          method: delete
+
+# Product
+  getProduct:
+    handler: src/server.handler
+    events:
+      - http: 
+          path: product/{data}
+          method: get
+
+  getProducts: 
+    handler: src/server.handler 
+    events: 
+      - http: 
+          path: products
+          method: get
+
+  getProductsByQuery: 
+    handler: src/server.handler 
+    events: 
+      - http: 
+          path: products/{query}
+          method: get
+
+  createProduct:
+    handler: src/server.handler
+    events:
+      - http:
+          path: products  
+          method: post
+
+  updateProduct:
+    handler: src/server.handler
+    events:
+      - http: 
+          path: product/{id}
+          method: put
+  
+  deleteProduct:
+    handler: src/server.handler
+    events:
+      - http: 
+          path: product/{id}
+          method: delete
+  #Cart
+  createCart:
+    handler: src/server.handler
+    events:
+      - http:
+          path: cart
+          method: post
+  #Reports
+  getTopSellerReport:
+    handler: src/server.handler
+    events:
+      - http:
+          path: reports/top
+          method: get
+
+  
