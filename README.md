@@ -11,40 +11,31 @@ REST API Routes
 
 User
 ```
-get /users
-
-get /user/:id
-
-post /users
-
-put /user/:id
-
-delete /user/:id
+GET /users
+GET /user/:id
+POST /users
+PUT /user/:id
+DELETE /user/:id
 ```
 
 Product
 ```
-get /products
-
-get /products/:query
-
-get /product/:query
-
-post /products
-
-put /product/:id
-
-delete /product/:id
+GET /products
+GET /products/:query
+GET /product/:query
+POST /products
+PUT /product/:id
+DELETE /product/:id
 ```
 
 Carts
 ```
-post /cart
+POST /cart
 ```
 
 Reports
 ```
-get /reports/top
+GET /reports/top
 ```
 
 ## Installation
