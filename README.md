@@ -59,4 +59,9 @@ To run unit and integration testing with code coverage
 npm run test
 ```
 
+
+To deploy the project to the AWS (make sure that you configure the yml first with right domain and should have aws keys available in your server)
+
+```
 npm run deploy
+```
