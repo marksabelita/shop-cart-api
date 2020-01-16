@@ -21,8 +21,8 @@ DELETE /user/:id
 Product
 ```
 GET /products
-GET /products/:query
-GET /product/:query
+GET /products/:query // get all products by name or description
+GET /product/:id  // get product by id
 POST /products
 PUT /product/:id
 DELETE /product/:id
